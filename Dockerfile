@@ -1,3 +1,5 @@
-git fetch origin 
-git checkout -b ortizwalter-patch-2 origin / ortizwalter-patch-2 
-git merge main
+git fetch origin FROM debian:9.5-slim
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
